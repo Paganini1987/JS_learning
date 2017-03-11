@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="FontAwesome/css/font-awesome.min.css">
+
+	<title>Preloader</title>
+</head>
+<body>
+	<img src="http://www.avtorinok.ru/photo/Jaguar_C_XF_pic_40353.jpg">
+	<img src="http://lukart.com.ua/assets/images/Avto/avto%20%20(80).jpg">
+	<img src="https://im1-tub-ru.yandex.net/i?id=824c2f1bb49bfa5e4ba55b047b3ba31b-l&n=13">
+	<i id="pre" class="fa fa-refresh fa-spin fa-3x fa-fw"></i>
+	<script>
+			var img = document.getElementsByTagName('img');
+			for(i=0;i<img.length;i++){
+				img[i].setAttribute('style','opacity:0');
+			}
+			window.onload = function() {
+	    	pre.setAttribute('style','display:none');
+	    	for(i=0;i<img.length;i++){
+	    		img[i].setAttribute('style','opacity:1');
+				}
+	  	};
+	</script>
+</body>
+</html>
