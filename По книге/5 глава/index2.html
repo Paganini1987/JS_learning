@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		function makeCar(){
+			var makes=['Chevy','GM','Fiat'];
+			var models=['Cadillac','500','Bell-Air'];
+
+			var rand1 = Math.floor(Math.random()*makes.length);
+			var rand2 = Math.floor(Math.random()*models.length);
+
+			var car={
+				make:makes[rand1],
+				model:models[rand2],
+				mileage:0
+			}
+			return car;
+		}
+		var carToSell=makeCar();
+		var carToSell2=makeCar();
+		console.log(carToSell);
+		console.log(carToSell2);
+	</script>
+</body>
+</html>

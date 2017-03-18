@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		var taxi={
+			make:"Webville Motors",
+			model:"Taxi",
+			year:1955,
+			color:"yellow",
+			passengers:4,
+			convertible:false,
+			milleage:281341
+		}
+		var chevy={
+			make:"Webville Motors",
+			model:"Taxi",
+			year:1957,
+			color:"yellow",
+			passengers:4,
+			convertible:false,
+			milleage:1021
+		}
+
+		function prequal(car){
+			if(car.milleage>10000 || car.year>1960){
+				return false;
+			}
+			return true;
+		}
+
+		var worthAlook=prequal(chevy);
+		if (worthAlook){
+			document.write('You gotta check out this '+chevy.make+" "+chevy.model);
+		}else{
+			document.write("You should really pass on the "+chevy.make+" "+chevy.model);
+		}
+	</script>
+</body>
+</html>
