@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		body {opacity: 0;}
+	</style>
+</head>
+<body>
+	<img class="blur" id="zero" src="img/F0G9qdk9RG4.jpg" alt="img">
+	<img class="blur" id="one" src="img/F0G9qdk9RG4.jpg" alt="img">
+	<img class="blur" id="two" src="img/F0G9qdk9RG4.jpg" alt="img">
+	<img class="blur" id="three" src="img/F0G9qdk9RG4.jpg" alt="img">
+	<img class="blur" id="four" src="img/F0G9qdk9RG4.jpg" alt="img">
+	<img class="blur" id="five" src="img/F0G9qdk9RG4.jpg" alt="img">
+
+	<link rel="stylesheet" href="css/style.css">
+	<script>
+
+		window.onload = init;
+
+		function init(){
+			var images = document.getElementsByTagName('img');
+			for(var i=0;i<images.length;i++){
+				images[i].onclick=showAnswer;
+			}
+		}
+
+		function showAnswer(e){
+			var image = e.target;
+			image.classList.remove('blur');
+		}
+	</script>
+</body>
+</html>

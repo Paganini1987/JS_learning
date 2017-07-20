@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<img id="map" src="img/F0G9qdk9RG4.jpg" alt="">
+
+	<script>
+		window.onload = init;
+
+		function init(){
+			var map = document.getElementById("map");
+			map.onmousemove = changeBlur;
+		}
+
+		function changeBlur(e){
+			var map = e.target;
+			var maxBlur = 30;
+
+			blur = Math.floor((maxBlur/map.height)*e.clientY);
+
+			map.style.filter = 'blur('+blur+'px)';
+
+		}
+		
+	</script>
+</body>
+</html>
