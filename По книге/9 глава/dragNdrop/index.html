@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>dragNdrop</title>
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<div class="leftColumn">
+		<div id="coord" class="coord"></div>
+		<div id="block" class="block" draggable="true"></div>
+	</div>
+	<div class="rightColumn">
+		
+	</div>
+	<script>
+		var block = document.getElementById('block');
+		var output = document.getElementById('coord');
+		block.onmousedown = function(e){
+			e.preventDefault();
+			block.onmousemove = move;
+			block.onmouseup = drop;
+
+			function move(e){
+				e.preventDefault();
+		    block.style.left = e.pageX - block.offsetWidth / 2 + 'px';
+		    block.style.top = e.pageY - block.offsetHeight / 2 + 'px';
+		    output.innerHTML = 'x: '+e.pageX+', y: '+e.pageY;
+			}
+
+			function drop(){
+				block.onmousemove = null;
+    		block.onmouseup = null;
+			}
+		}
+	</script>
+</body>
+</html>

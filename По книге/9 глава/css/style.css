@@ -9,7 +9,8 @@ img {
 	margin: 20px;
 	max-width: 500px;
 	height: auto;
+	transition: 500ms ease;
 }
 .blur {
-	filter: blur(30px);
+	filter: blur(10px);
 }	

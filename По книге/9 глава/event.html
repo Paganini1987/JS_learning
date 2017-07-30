@@ -23,13 +23,19 @@
 		function init(){
 			var images = document.getElementsByTagName('img');
 			for(var i=0;i<images.length;i++){
-				images[i].onclick=showAnswer;
+				images[i].onmouseover=showAnswer;
+				images[i].onmouseout=reblur;
 			}
 		}
 
 		function showAnswer(e){
 			var image = e.target;
 			image.classList.remove('blur');
+		}
+
+		function reblur(e){
+			var image = e.target;
+			image.classList.add('blur');
 		}
 	</script>
 </body>

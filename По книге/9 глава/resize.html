@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div id="display">
+		Не масштабируй окно!
+	</div>
+	<script>
+		function resize(){
+			var el=document.getElementById('display');
+			el.innerHTML=el.innerHTML+' хватит!';
+		}
+		window.onresize = resize;
+	</script>
+</body>
+</html>

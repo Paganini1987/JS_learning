@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+
+	var passengers = [
+		{name: 'ivan', paid: false, ticket: 'coach'},
+		{name: 'sasha', paid: true, ticket: 'firstClass'},
+		{name: 'pavel', paid: true, ticket: 'firstClass'},
+		{name: 'sergey', paid: false, ticket: 'lowcost'}
+	];
+
+		function processPassengers(passengers, testFunction){
+			for(var i=0;i<passengers.length;i++){
+				if(testFunction(passengers[i])){
+					return false;
+				}
+			}
+			return true;
+		}
+
+		function printPassengers(passenger){
+			console.log(passenger.name+': '+passenger.paid);
+		}
+
+		processPassengers(passengers, printPassengers);
+
+		function createDrinkOrder(passenger){
+			var orderFunction;
+
+			if(passenger.ticket==='firstClass'){
+				orderFunction = function(){
+					alert(passenger.name + ', Коктейль или вино?');
+				}
+			}
+			else if(passenger.ticket==='coach')
+			{
+				orderFunction = function(){
+					alert(passenger.name + ', Кола или вода?');
+				}
+			}
+			else
+			{
+				orderFunction = function(){
+					alert(passenger.name + ', Кола или вода или вино?');
+				}
+			}
+			return orderFunction;
+		}
+
+		function createDinnerOrder(passenger){
+			var orderFunction;
+
+			if(passenger.ticket==='firstClass'){
+				orderFunction = function(){
+					alert(passenger.name + ', Курица или паста?');
+				}
+			}
+			else if(passenger.ticket==='coach')
+			{
+				orderFunction = function(){
+					alert(passenger.name + ', Орешки или сухарики?');
+				}
+			}
+			else
+			{
+				orderFunction = function(){
+					alert(passenger.name + ', Закуски или сырная тарелка?');
+				}
+			}
+			return orderFunction;
+		}
+
+		function servCustomer(passenger){
+			var getDrinkOrderFunction = createDrinkOrder(passenger);
+			var getDinnerOrderFunction = createDinnerOrder(passenger);
+
+			getDrinkOrderFunction();
+			
+			getDinnerOrderFunction();
+			//dinner
+			getDrinkOrderFunction();
+		}
+
+		function servePassengers(passengers){
+			for(var i=0;i<passengers.length;i++){
+				servCustomer(passengers[i]);
+			}
+		}
+
+		servePassengers(passengers);
+
+	</script>
+</body>
+</html>
