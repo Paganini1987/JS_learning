@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		function Car(carParams){
+			this.make=carParams.make;
+			this.model=carParams.model;
+			this.year=carParams.year;
+			this.color=carParams.color;
+			this.passengers=carParams.passengers;
+			this.convertible=carParams.convertible;
+			this.mileage=carParams.mileage;
+			this.started=false;
+			this.start=function(){
+				this.started=true;
+			};
+			this.stop=function(){
+				this.started=false;
+			};
+			this.drive=function(){
+				if(this.started){
+					console.log(this.make+' '+this.model+' goes zoom zoom!');
+				}else{
+					console.log('Start the engine first!');
+				}
+			}
+		}
+		var carParams={
+			make: 'GM',
+			model: 'Cevy',
+			year: 1957,
+			color: 'red',
+			passengers: 5,
+			convertible: false,
+			mileage: 1021
+		};
+
+		var chevy=new Car(carParams);
+
+		if(chevy instanceof Car){console.log('yes!')};
+
+		var cars=[chevy];
+
+		for(var i=0;i<cars.length;i++){
+			cars[i].start();
+			cars[i].drive();
+			cars[i].drive();
+			cars[i].stop();
+		}
+	</script>
+</body>
+</html>
