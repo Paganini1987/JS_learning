@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		function Robot(name,year,owner){
+			this.name=name;
+			this.year=year;
+			this.owner=owner;
+		}
+
+		Robot.prototype.maker='HONDA';
+
+		Robot.prototype.speak=function(){
+			console.log(this.name+' speak ...');
+		}
+
+		Robot.prototype.makeCoffee=function(){
+			console.log('coffe done');
+		}
+
+		Robot.prototype.blinkLights=function(){
+			console.log('BLINK!!!');
+		}
+
+		var robby=new Robot('robby',2000,'MEN');
+		var rosie=new Robot('rosie',2010,'WOMEN');
+
+		rosie.cleanHouse=function(){
+			console.log(this.name+' clean house.');
+		}
+
+		console.log(robby.name+' was made by '+robby.maker+' in '+robby.year+' and owned by '+robby.owner);
+	
+		robby.makeCoffee();
+		robby.blinkLights();
+
+		console.log(rosie.name+' was made by '+rosie.maker+' in '+rosie.year+' and owned by '+rosie.owner)
+	
+		rosie.cleanHouse();
+
+	</script>
+</body>
+</html>
